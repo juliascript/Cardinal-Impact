@@ -16,14 +16,6 @@ import CoreLocation
  
  */
 
-class CustomPointAnnotation: MKPointAnnotation {
-    var image: UIImage?
-    
-    init(image: UIImage?) {
-        self.image = image
-    }
- }
-
 class MapViewController: UIViewController, MKMapViewDelegate {
     
     var locationManager = CLLocationManager()
@@ -36,15 +28,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             mapView.removeAnnotations(mapView.annotations)
             
             for user in users {
+                if user.type == "student" && user.state == "lost" {
+//                    flash their icon
+//                    animate large and small
+                    print(user)
+                    print("DA DADA DADADADA DA NOW WE'RE LOST")
+                }
                 let location = CLLocationCoordinate2DMake(user.latitude, user.longitude)
-//                let pin = CustomPointAnnotation(image: UIImage(named: "default"))
                 let pin = MKPointAnnotation()
-                print(user.type)
                 if user.type == StudentType.wizard.rawValue {
-//                    pin.image = UIImage(named: "wizard")
                     pin.subtitle = StudentType.wizard.rawValue
                 } else if user.type == StudentType.newcomer.rawValue {
-//                    pin.image = UIImage(named: "newcomer")
                     pin.subtitle = StudentType.newcomer.rawValue
                 }
                 pin.coordinate = location
@@ -78,6 +72,26 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         print("current location button tapped")
         self.zoomToCenter(center: center)
+    }
+    
+    @IBAction func lostButtonTapped(_ sender: Any) {
+        print(#function)
+        fb.updateUserValue(key: "state", value: "lost")
+        var alert = UIAlertController(title: "Don't worry",
+                          message: "Help is on the way!",
+                          preferredStyle: .alert)
+        
+        let okButton = UIAlertAction(title: "OK", style: .default) { (action) in
+            print("ok button pressed")
+        }
+        let cancelButton = UIAlertAction(title: "Nevermind", style: .destructive) { (action) in
+            print("Cancel")
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(okButton)
+        alert.addAction(cancelButton)
+        self.present(alert, animated: true)
     }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {

@@ -28,12 +28,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             mapView.removeAnnotations(mapView.annotations)
             
             for user in users {
-                if user.type == "student" && user.state == "lost" {
-//                    flash their icon
-//                    animate large and small
-                    print(user)
-                    print("DA DADA DADADADA DA NOW WE'RE LOST")
-                }
                 let location = CLLocationCoordinate2DMake(user.latitude, user.longitude)
                 let pin = MKPointAnnotation()
                 if user.type == StudentType.wizard.rawValue {
@@ -44,6 +38,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 pin.coordinate = location
                 pin.title = user.name
                 mapView.addAnnotation(pin)
+                if user.type == "student" && user.state == "lost" {
+                    //                    flash their icon
+                    //                    animate large and small
+                    print(user)
+                    print("DA DADA DADADADA DA NOW WE'RE LOST")
+                    
+                }
             }
         }
     }
@@ -80,7 +81,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBAction func lostButtonTapped(_ sender: Any) {
         print(#function)
         fb.updateUserValue(key: "state", value: "lost")
-        var alert = UIAlertController(title: "Don't worry",
+        let alert = UIAlertController(title: "Don't worry",
                           message: "Help is on the way!",
                           preferredStyle: .alert)
         
@@ -144,6 +145,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         } else {
             annotationView?.image = UIImage(named: "default")
         }
+        
+        
         
         annotationView?.canShowCallout = true
         return annotationView

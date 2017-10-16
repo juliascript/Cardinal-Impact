@@ -32,6 +32,7 @@ class SettingsViewController: UIViewController {
         presentPhotoOptions()
     }
     
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,15 +45,7 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-//    func instantiate() {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//        let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! MapViewController
-//        Helper.cacheUser()
-//        vc.currentUser = self.newUser
-//        self.present(vc, animated: true, completion: nil)
-//    }
-    
+
     func setupUI() {
         profileButton.maskToCircle()
         profileButton.clipsToBounds = true

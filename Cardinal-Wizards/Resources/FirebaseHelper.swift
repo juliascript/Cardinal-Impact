@@ -29,8 +29,9 @@ class FirebaseHelper {
                                                                    "type": newUser.type,
                                                                    "email": newUser.email,
                                                                    "longitude": "\(newUser.longitude)",
-                    "latitude": "\(newUser.latitude)",
-                    "state": newUser.state])
+                                                                    "latitude": "\(newUser.latitude)",
+                                                                    "state": newUser.state,
+                                                                    "profile": "0"])
                 didSignUp = true
             }
         }
@@ -76,12 +77,30 @@ class FirebaseHelper {
                 let longitude = value["longitude"] as! String
                 let latitude = value["latitude"] as! String
                 let state = value["state"] as! String
+                
+                var user = User(name: name, uid: uid, email: email, type: type, state: state, latitude: Double(latitude)!, longitude: Double(longitude)!, profile: UIImagePNGRepresentation(#imageLiteral(resourceName: "profile_placeholder"))! )
+                
+                if let profileImageURL = value["profile"] as? String
+                {
+                    if profileImageURL != "0" {
+                    let url = URL(string: profileImageURL)
+                    URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                        if error != nil{
+                            print(error!)
+                            return
+                        }
+                        DispatchQueue.main.async {
+                            user.profile = data!
+                        }
+                    }).resume()
+                    }
+                }
                 //                let major = value["major"] as! String
                 //                let year = value["year"] as! Int
                 //                let interests = value["interests"] as! [String]
                 
                 
-                let user = User(name: name, uid: uid, email: email, type: type, state: state, latitude: Double(latitude)!, longitude: Double(longitude)!)
+                
                 
                 callback(user)
             }
@@ -158,7 +177,23 @@ class FirebaseHelper {
                         let latitude = messageData["latitude"] as! String
                         let state = messageData["state"] as! String
                         
-                        let user = User(name: name, uid: uid, email: email, type: type, state: state, latitude: Double(latitude)!, longitude: Double(longitude)!)
+                        var user = User(name: name, uid: uid, email: email, type: type, state: state, latitude: Double(latitude)!, longitude: Double(longitude)!, profile: UIImagePNGRepresentation(#imageLiteral(resourceName: "profile_placeholder"))!)
+                        
+                        if let profileImageURL = messageData["profile"] as? String
+                        {
+                            if profileImageURL != "0" {
+                            let url = URL(string: profileImageURL)
+                            URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                                if error != nil{
+                                    print(error!)
+                                    return
+                                }
+                                DispatchQueue.main.async {
+                                    user.profile = data!
+                                }
+                            }).resume()
+                            }
+                        }
                         
                         vc.users.append(user)
                     }
@@ -177,7 +212,23 @@ class FirebaseHelper {
                             let longitude = messageData["longitude"] as! String
                             let latitude = messageData["latitude"] as! String
                             let state = messageData["state"] as! String
-                            let user = User(name: name,uid: uid, email: email, type: type, state: state, latitude: Double(latitude)!, longitude: Double(longitude)!)
+                            var user = User(name: name,uid: uid, email: email, type: type, state: state, latitude: Double(latitude)!, longitude: Double(longitude)!, profile: UIImagePNGRepresentation(#imageLiteral(resourceName: "profile_placeholder"))!)
+                            
+                            if let profileImageURL = messageData["profile"] as? String
+                            {
+                                if profileImageURL != "0" {
+                                let url = URL(string: profileImageURL)
+                                URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                                    if error != nil{
+                                        print(error!)
+                                        return
+                                    }
+                                    DispatchQueue.main.async {
+                                        user.profile = data!
+                                    }
+                                }).resume()
+                                }
+                            }
                             
                             if user.uid != Auth.auth().currentUser!.uid {
                                 vc.users.append(user)
@@ -206,7 +257,24 @@ class FirebaseHelper {
                     let latitude = messageData["latitude"] as! String
                     let state = messageData["state"] as! String
                     
-                    let user = User(name: name,uid: uid, email: email, type: type, state: state, latitude: Double(latitude)!, longitude: Double(longitude)!)
+                    var user = User(name: name,uid: uid, email: email, type: type, state: state, latitude: Double(latitude)!, longitude: Double(longitude)!, profile: UIImagePNGRepresentation(#imageLiteral(resourceName: "profile_placeholder"))!)
+                    
+                    if let profileImageURL = messageData["profile"] as? String
+                    {
+                        if profileImageURL != "0" {
+                        let url = URL(string: profileImageURL)
+                        URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                            if error != nil{
+                                print(error!)
+                                return
+                            }
+                            DispatchQueue.main.async {
+                                user.profile = data!
+                            }
+                        }).resume()
+                        }
+                    }
+                    
                     if vc.users[index].latitude != Double(latitude)! && vc.users[index].longitude != Double(longitude)! || vc.users[index].state != state {
                         vc.users[index] = user
                     }

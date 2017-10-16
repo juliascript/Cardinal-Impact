@@ -21,6 +21,7 @@ struct User: Codable {
     var state: String 
     var latitude: Double 
     var longitude: Double
+    var profile: Data
     
 //    let image: Data?
 //    let major: String?

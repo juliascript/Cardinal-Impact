@@ -29,7 +29,8 @@ class FirebaseHelper {
                                                                    "type": newUser.type,
                                                                    "email": newUser.email,
                                                                    "longitude": "\(newUser.longitude)",
-                                                                   "latitude": "\(newUser.latitude)"])
+                    "latitude": "\(newUser.latitude)",
+                    "state": newUser.state])
                 didSignUp = true
             }
         }
@@ -74,12 +75,13 @@ class FirebaseHelper {
                 let type = value["type"] as! String
                 let longitude = value["longitude"] as! String
                 let latitude = value["latitude"] as! String
+                let state = value["state"] as! String
                 //                let major = value["major"] as! String
                 //                let year = value["year"] as! Int
                 //                let interests = value["interests"] as! [String]
                 
                 
-                let user = User(name: name, uid: uid, email: email, type: type, state: "not lost", latitude: Double(latitude)!, longitude: Double(longitude)!)
+                let user = User(name: name, uid: uid, email: email, type: type, state: state, latitude: Double(latitude)!, longitude: Double(longitude)!)
                 
                 callback(user)
             }
@@ -154,8 +156,9 @@ class FirebaseHelper {
                         let type = messageData["type"] as! String
                         let longitude = messageData["longitude"] as! String
                         let latitude = messageData["latitude"] as! String
+                        let state = messageData["state"] as! String
                         
-                        let user = User(name: name, uid: uid, email: email, type: type, state: "not lost", latitude: Double(latitude)!, longitude: Double(longitude)!)
+                        let user = User(name: name, uid: uid, email: email, type: type, state: state, latitude: Double(latitude)!, longitude: Double(longitude)!)
                         
                         vc.users.append(user)
                     }
@@ -173,8 +176,8 @@ class FirebaseHelper {
                             let type = messageData["type"] as! String
                             let longitude = messageData["longitude"] as! String
                             let latitude = messageData["latitude"] as! String
-                            
-                            let user = User(name: name,uid: uid, email: email, type: type, state: "not lost", latitude: Double(latitude)!, longitude: Double(longitude)!)
+                            let state = messageData["state"] as! String
+                            let user = User(name: name,uid: uid, email: email, type: type, state: state, latitude: Double(latitude)!, longitude: Double(longitude)!)
                             
                             if user.uid != Auth.auth().currentUser!.uid {
                                 vc.users.append(user)
@@ -201,11 +204,13 @@ class FirebaseHelper {
                     let type = messageData["type"] as! String
                     let longitude = messageData["longitude"] as! String
                     let latitude = messageData["latitude"] as! String
+                    let state = messageData["state"] as! String
                     
-                    let user = User(name: name,uid: uid, email: email, type: type, state: "not lost", latitude: Double(latitude)!, longitude: Double(longitude)!)
-                    if vc.users[index].latitude != Double(latitude)! && vc.users[index].longitude != Double(longitude)! {
+                    let user = User(name: name,uid: uid, email: email, type: type, state: state, latitude: Double(latitude)!, longitude: Double(longitude)!)
+                    if vc.users[index].latitude != Double(latitude)! && vc.users[index].longitude != Double(longitude)! || vc.users[index].state != state {
                         vc.users[index] = user
                     }
+                    
                 }
             }
         })

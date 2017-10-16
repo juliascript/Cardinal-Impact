@@ -149,7 +149,8 @@ class SignUpViewController: UIViewController {
                                                                         "type": self.newUser.type,
                                                                         "email": self.newUser.email,
                                                                         "longitude": "\(self.newUser.longitude)",
-                                                                        "latitude": "\(self.newUser.latitude)"])
+                                                                        "latitude": "\(self.newUser.latitude)",
+                                                                       "state": self.newUser.state])
                     
                     self.instantiateHomeScreen()
                 } else {

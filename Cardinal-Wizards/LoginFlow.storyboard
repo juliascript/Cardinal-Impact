@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jes-ct-0O0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,6 +20,9 @@
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
         </array>
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Login View Controller-->
@@ -35,8 +37,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome_image" translatesAutoresizingMaskIntoConstraints="NO" id="M6R-nv-O8f">
+                                <rect key="frame" x="0.0" y="454" width="375" height="213"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-big" translatesAutoresizingMaskIntoConstraints="NO" id="rVq-oA-kWB">
-                                <rect key="frame" x="68" y="103" width="239" height="261"/>
+                                <rect key="frame" x="68" y="53" width="239" height="261"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="261" id="fqq-Kf-6Ty"/>
                                     <constraint firstAttribute="width" constant="239" id="lHt-OT-aXj"/>
@@ -70,17 +75,28 @@
                                     <action selector="signUpButtonPressed:" destination="Jes-ct-0O0" eventType="touchUpInside" id="CXc-Sk-fh7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cardinal Impact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="go4-Tw-Q24">
+                                <rect key="frame" x="0.0" y="364" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="32"/>
+                                <color key="textColor" red="0.50139272209999997" green="0.1343055964" blue="0.1098841876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.98820984363555908" green="0.98443007469177246" blue="0.97647309303283691" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="rVq-oA-kWB" firstAttribute="centerY" secondItem="dF8-Es-AHw" secondAttribute="centerY" constant="-100" id="A9Z-9c-kCI"/>
+                            <constraint firstItem="rVq-oA-kWB" firstAttribute="centerY" secondItem="dF8-Es-AHw" secondAttribute="centerY" constant="-150" id="A9Z-9c-kCI"/>
                             <constraint firstItem="rVq-oA-kWB" firstAttribute="centerX" secondItem="dF8-Es-AHw" secondAttribute="centerX" id="Byr-M2-0VH"/>
+                            <constraint firstItem="M6R-nv-O8f" firstAttribute="leading" secondItem="dF8-Es-AHw" secondAttribute="leading" id="EvO-tK-KoQ"/>
                             <constraint firstItem="9LQ-UH-3LV" firstAttribute="leading" secondItem="dF8-Es-AHw" secondAttribute="leadingMargin" constant="14" id="HPX-k9-ib8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9LQ-UH-3LV" secondAttribute="trailing" constant="14" id="OwG-Hk-pma"/>
                             <constraint firstItem="pyN-gB-XhJ" firstAttribute="trailing" secondItem="9LQ-UH-3LV" secondAttribute="trailing" id="Prw-Oj-Ahk"/>
+                            <constraint firstAttribute="trailing" secondItem="M6R-nv-O8f" secondAttribute="trailing" id="Py8-2f-rSB"/>
                             <constraint firstItem="9Mt-ph-OQe" firstAttribute="top" secondItem="9LQ-UH-3LV" secondAttribute="bottom" constant="54" id="eSA-Zg-2at"/>
                             <constraint firstItem="9LQ-UH-3LV" firstAttribute="top" secondItem="pyN-gB-XhJ" secondAttribute="bottom" constant="24" id="hqG-wB-Kmp"/>
                             <constraint firstItem="pyN-gB-XhJ" firstAttribute="leading" secondItem="9LQ-UH-3LV" secondAttribute="leading" id="mae-a6-xsY"/>
+                            <constraint firstItem="9Mt-ph-OQe" firstAttribute="top" secondItem="M6R-nv-O8f" secondAttribute="bottom" id="qcQ-sC-IVk"/>
+                            <constraint firstItem="M6R-nv-O8f" firstAttribute="top" secondItem="rVq-oA-kWB" secondAttribute="bottom" constant="140" id="xLP-62-sxc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -91,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACu-vu-EXm" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="139"/>
+            <point key="canvasLocation" x="221.59999999999999" y="138.98050974512745"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="qjW-GA-IOK">
@@ -287,5 +303,6 @@
     </scenes>
     <resources>
         <image name="logo-big" width="251" height="465"/>
+        <image name="welcome_image" width="1242" height="738"/>
     </resources>
 </document>

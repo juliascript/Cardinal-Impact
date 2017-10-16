@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A306673A1F92C11A00E4AE23 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30667391F92C11A00E4AE23 /* MapViewController.swift */; };
+		A3167A911F846BA60051DB3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3167A901F846BA60051DB3D /* AppDelegate.swift */; };
+		A3167A931F846BA60051DB3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3167A921F846BA60051DB3D /* ViewController.swift */; };
+		A3167A961F846BA60051DB3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3167A941F846BA60051DB3D /* Main.storyboard */; };
+		A3167A981F846BA60051DB3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3167A971F846BA60051DB3D /* Assets.xcassets */; };
+		A3167A9B1F846BA60051DB3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3167A991F846BA60051DB3D /* LaunchScreen.storyboard */; };
+		A3167AA31F846C5F0051DB3D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3167AA21F846C5F0051DB3D /* UserModel.swift */; };
+		A3167AA51F846D7B0051DB3D /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3167AA41F846D7B0051DB3D /* LoginFlow.storyboard */; };
+		D8C19A485E1D8103300B39CF /* Pods_Cardinal_Wizards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D140E8B9C1BEC0436C54B175 /* Pods_Cardinal_Wizards.framework */; };
+		FA1A840A1F92C09A00F7333D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A84091F92C09A00F7333D /* LoginViewController.swift */; };
+		FA1A840C1F92C0B700F7333D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A840B1F92C0B700F7333D /* SignUpViewController.swift */; };
+		FA1A84101F92C37100F7333D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A840F1F92C37100F7333D /* Helper.swift */; };
+		FA1A84121F92C39400F7333D /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A84111F92C39400F7333D /* FirebaseHelper.swift */; };
+		FA1A84141F92CCE700F7333D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA1A84131F92CC7400F7333D /* GoogleService-Info.plist */; };
+		FA3E2A8C1F9405F9005BEFC9 /* temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3E2A8B1F9405F9005BEFC9 /* temp.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A12A8AF53F48131B1B47847 /* Pods-Cardinal-Wizards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cardinal-Wizards.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cardinal-Wizards/Pods-Cardinal-Wizards.release.xcconfig"; sourceTree = "<group>"; };
+		9DC151A169B8524AAE1EA9F2 /* Pods-Cardinal-Wizards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cardinal-Wizards.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cardinal-Wizards/Pods-Cardinal-Wizards.debug.xcconfig"; sourceTree = "<group>"; };
+		A30667391F92C11A00E4AE23 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A3167A8D1F846BA60051DB3D /* Cardinal-Wizards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cardinal-Wizards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3167A901F846BA60051DB3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A3167A921F846BA60051DB3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A3167A951F846BA60051DB3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A3167A971F846BA60051DB3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A3167A9A1F846BA60051DB3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A3167A9C1F846BA60051DB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3167AA21F846C5F0051DB3D /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		A3167AA41F846D7B0051DB3D /* LoginFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
+		D140E8B9C1BEC0436C54B175 /* Pods_Cardinal_Wizards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cardinal_Wizards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1A84091F92C09A00F7333D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FA1A840B1F92C0B700F7333D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FA1A840F1F92C37100F7333D /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		FA1A84111F92C39400F7333D /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
+		FA1A84131F92CC7400F7333D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA3E2A8B1F9405F9005BEFC9 /* temp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = temp.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3167A8A1F846BA60051DB3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8C19A485E1D8103300B39CF /* Pods_Cardinal_Wizards.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40660FBC3D14CADE0B3466DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D140E8B9C1BEC0436C54B175 /* Pods_Cardinal_Wizards.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A3167A841F846BA60051DB3D = {
+			isa = PBXGroup;
+			children = (
+				A3167A8F1F846BA60051DB3D /* Cardinal-Wizards */,
+				A3167A8E1F846BA60051DB3D /* Products */,
+				ACF8F4AB12CF95BFA0089F54 /* Pods */,
+				40660FBC3D14CADE0B3466DE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A3167A8E1F846BA60051DB3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3167A8D1F846BA60051DB3D /* Cardinal-Wizards.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3167A8F1F846BA60051DB3D /* Cardinal-Wizards */ = {
+			isa = PBXGroup;
+			children = (
+				FA1A840D1F92C22C00F7333D /* Resources */,
+				FA1A84081F92C07E00F7333D /* Login Controllers */,
+				A3167A901F846BA60051DB3D /* AppDelegate.swift */,
+				A30667391F92C11A00E4AE23 /* MapViewController.swift */,
+				A3167A921F846BA60051DB3D /* ViewController.swift */,
+				A3167AA21F846C5F0051DB3D /* UserModel.swift */,
+				A3167AA41F846D7B0051DB3D /* LoginFlow.storyboard */,
+				A3167A941F846BA60051DB3D /* Main.storyboard */,
+				A3167A971F846BA60051DB3D /* Assets.xcassets */,
+				A3167A991F846BA60051DB3D /* LaunchScreen.storyboard */,
+				FA1A84131F92CC7400F7333D /* GoogleService-Info.plist */,
+				A3167A9C1F846BA60051DB3D /* Info.plist */,
+				FA3E2A8B1F9405F9005BEFC9 /* temp.storyboard */,
+			);
+			path = "Cardinal-Wizards";
+			sourceTree = "<group>";
+		};
+		ACF8F4AB12CF95BFA0089F54 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9DC151A169B8524AAE1EA9F2 /* Pods-Cardinal-Wizards.debug.xcconfig */,
+				1A12A8AF53F48131B1B47847 /* Pods-Cardinal-Wizards.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA1A84081F92C07E00F7333D /* Login Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA1A84091F92C09A00F7333D /* LoginViewController.swift */,
+				FA1A840B1F92C0B700F7333D /* SignUpViewController.swift */,
+			);
+			path = "Login Controllers";
+			sourceTree = "<group>";
+		};
+		FA1A840D1F92C22C00F7333D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA1A840F1F92C37100F7333D /* Helper.swift */,
+				FA1A84111F92C39400F7333D /* FirebaseHelper.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A3167A8C1F846BA60051DB3D /* Cardinal-Wizards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3167A9F1F846BA60051DB3D /* Build configuration list for PBXNativeTarget "Cardinal-Wizards" */;
+			buildPhases = (
+				A542E53D3DC4AB37DB61E35E /* [CP] Check Pods Manifest.lock */,
+				A3167A891F846BA60051DB3D /* Sources */,
+				A3167A8A1F846BA60051DB3D /* Frameworks */,
+				A3167A8B1F846BA60051DB3D /* Resources */,
+				D1A9BB00F353D52C3F8C1074 /* [CP] Embed Pods Frameworks */,
+				95851A72216F65D030291AC4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cardinal-Wizards";
+			productName = "Cardinal-Wizards";
+			productReference = A3167A8D1F846BA60051DB3D /* Cardinal-Wizards.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A3167A851F846BA60051DB3D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Julia Geist";
+				TargetAttributes = {
+					A3167A8C1F846BA60051DB3D = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 7QQX7GNST9;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A3167A881F846BA60051DB3D /* Build configuration list for PBXProject "Cardinal-Wizards" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A3167A841F846BA60051DB3D;
+			productRefGroup = A3167A8E1F846BA60051DB3D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A3167A8C1F846BA60051DB3D /* Cardinal-Wizards */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A3167A8B1F846BA60051DB3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3167AA51F846D7B0051DB3D /* LoginFlow.storyboard in Resources */,
+				A3167A9B1F846BA60051DB3D /* LaunchScreen.storyboard in Resources */,
+				FA3E2A8C1F9405F9005BEFC9 /* temp.storyboard in Resources */,
+				FA1A84141F92CCE700F7333D /* GoogleService-Info.plist in Resources */,
+				A3167A981F846BA60051DB3D /* Assets.xcassets in Resources */,
+				A3167A961F846BA60051DB3D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		95851A72216F65D030291AC4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cardinal-Wizards/Pods-Cardinal-Wizards-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A542E53D3DC4AB37DB61E35E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cardinal-Wizards-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1A9BB00F353D52C3F8C1074 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Cardinal-Wizards/Pods-Cardinal-Wizards-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftHash/SwiftHash.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cardinal-Wizards/Pods-Cardinal-Wizards-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3167A891F846BA60051DB3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1A84121F92C39400F7333D /* FirebaseHelper.swift in Sources */,
+				FA1A840A1F92C09A00F7333D /* LoginViewController.swift in Sources */,
+				A3167A931F846BA60051DB3D /* ViewController.swift in Sources */,
+				A3167AA31F846C5F0051DB3D /* UserModel.swift in Sources */,
+				A3167A911F846BA60051DB3D /* AppDelegate.swift in Sources */,
+				A306673A1F92C11A00E4AE23 /* MapViewController.swift in Sources */,
+				FA1A840C1F92C0B700F7333D /* SignUpViewController.swift in Sources */,
+				FA1A84101F92C37100F7333D /* Helper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A3167A941F846BA60051DB3D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3167A951F846BA60051DB3D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A3167A991F846BA60051DB3D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3167A9A1F846BA60051DB3D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A3167A9D1F846BA60051DB3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A3167A9E1F846BA60051DB3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A3167AA01F846BA60051DB3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DC151A169B8524AAE1EA9F2 /* Pods-Cardinal-Wizards.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7QQX7GNST9;
+				INFOPLIST_FILE = "Cardinal-Wizards/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.juliageist.Cardinal-Wizards";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A3167AA11F846BA60051DB3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A12A8AF53F48131B1B47847 /* Pods-Cardinal-Wizards.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7QQX7GNST9;
+				INFOPLIST_FILE = "Cardinal-Wizards/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.juliageist.Cardinal-Wizards";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A3167A881F846BA60051DB3D /* Build configuration list for PBXProject "Cardinal-Wizards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3167A9D1F846BA60051DB3D /* Debug */,
+				A3167A9E1F846BA60051DB3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3167A9F1F846BA60051DB3D /* Build configuration list for PBXNativeTarget "Cardinal-Wizards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3167AA01F846BA60051DB3D /* Debug */,
+				A3167AA11F846BA60051DB3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A3167A851F846BA60051DB3D /* Project object */;
+}

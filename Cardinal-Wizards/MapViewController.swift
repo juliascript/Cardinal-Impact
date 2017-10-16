@@ -80,6 +80,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.zoomToCenter(center: center)
     }
     
+    @IBAction func lostButtonTapped(_ sender: Any) {
+        print(#function)
+    }
+    
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         if self.currentUserLocation == userLocation {
             return

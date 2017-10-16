@@ -22,31 +22,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="S5o-Gc-uD2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                             </mapView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fv-CN-Rbq">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem title="Current Location" id="gwJ-8O-nx5">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zK-Hf-4Dv">
+                                <rect key="frame" x="0.0" y="598" width="375" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvU-JX-04s">
+                                        <rect key="frame" x="63" y="0.0" width="222" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="I'm lost"/>
                                         <connections>
-                                            <action selector="currentLocationButtonTapped:" destination="BYZ-38-t0r" id="qnT-Pc-ekS"/>
+                                            <action selector="lostButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SNB-2p-M9L"/>
                                         </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fw-LT-TIN">
+                                        <rect key="frame" x="14" y="6" width="30" height="42"/>
+                                        <state key="normal" image="location"/>
+                                        <connections>
+                                            <action selector="currentLocationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fE6-QA-xP7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JvU-JX-04s" secondAttribute="trailing" constant="90" id="38I-5w-6Sn"/>
+                                    <constraint firstItem="2Fw-LT-TIN" firstAttribute="top" secondItem="8zK-Hf-4Dv" secondAttribute="top" constant="6" id="5hN-kj-FQZ"/>
+                                    <constraint firstItem="JvU-JX-04s" firstAttribute="leading" secondItem="2Fw-LT-TIN" secondAttribute="trailing" id="MDZ-Eg-xqp"/>
+                                    <constraint firstAttribute="height" constant="80" id="N2t-kZ-XbQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="JvU-JX-04s" secondAttribute="bottom" constant="32" id="VRQ-aX-HCz"/>
+                                    <constraint firstItem="2Fw-LT-TIN" firstAttribute="leading" secondItem="8zK-Hf-4Dv" secondAttribute="leading" constant="14" id="X9v-Pf-8eW"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Fw-LT-TIN" secondAttribute="bottom" constant="39" id="r4O-0x-pcR"/>
+                                    <constraint firstItem="JvU-JX-04s" firstAttribute="top" secondItem="8zK-Hf-4Dv" secondAttribute="top" id="xJJ-rA-nTC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.84522749352331605" green="0.46664321989907642" blue="0.50880976994590077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="S5o-Gc-uD2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="9sq-kT-c2n"/>
                             <constraint firstItem="S5o-Gc-uD2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gtg-1e-Sge"/>
-                            <constraint firstItem="9fv-CN-Rbq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LCV-DF-kif"/>
+                            <constraint firstItem="8zK-Hf-4Dv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jdj-mT-2X1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8zK-Hf-4Dv" secondAttribute="bottom" constant="-11" id="QbR-nE-A3G"/>
                             <constraint firstItem="S5o-Gc-uD2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Tsg-Fe-H4Y"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9fv-CN-Rbq" secondAttribute="bottom" id="hEo-UF-x6e"/>
-                            <constraint firstItem="S5o-Gc-uD2" firstAttribute="bottom" secondItem="9fv-CN-Rbq" secondAttribute="top" id="xij-vr-xzG"/>
+                            <constraint firstItem="8zK-Hf-4Dv" firstAttribute="top" secondItem="S5o-Gc-uD2" secondAttribute="bottom" id="WqT-fX-gGM"/>
+                            <constraint firstItem="8zK-Hf-4Dv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="shy-Mc-OK4"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomToolbar" destination="9fv-CN-Rbq" id="CFO-H4-lne"/>
                         <outlet property="mapView" destination="S5o-Gc-uD2" id="Cvw-Th-fdG"/>
                     </connections>
                 </viewController>
@@ -55,4 +76,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="136.28185907046478"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location" width="50" height="50"/>
+    </resources>
 </document>

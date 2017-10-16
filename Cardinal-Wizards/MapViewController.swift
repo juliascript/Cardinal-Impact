@@ -51,6 +51,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var bottomToolbar: UIToolbar!
     
+    @IBAction func settingButtonPressed(_ sender: Any) {
+        instantiateSettings()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -65,7 +69,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             mapView.showsCompass = true
         }
     }
-
     @IBAction func currentLocationButtonTapped(_ sender: Any) {
         guard let center = locationManager.location?.coordinate else {
             return
@@ -93,7 +96,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         alert.addAction(cancelButton)
         self.present(alert, animated: true)
     }
+        func instantiateSettings() {
+            let storyboard = UIStoryboard(name: "temp", bundle: nil)
     
+            let vc = storyboard.instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
+            vc.currentUser = self.currentUser
+            self.present(vc, animated: true, completion: nil)
+        }
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         if self.currentUserLocation == userLocation {
             return

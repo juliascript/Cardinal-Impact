@@ -22,6 +22,7 @@
 		FA1A84141F92CCE700F7333D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA1A84131F92CC7400F7333D /* GoogleService-Info.plist */; };
 		FAE0B3D31F946E8B002E1216 /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE0B3D21F946E8B002E1216 /* LoginFlow.storyboard */; };
 		FAE0B3D51F946FC1002E1216 /* temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE0B3D41F946FC1002E1216 /* temp.storyboard */; };
+		FAE0B3D71F9471AE002E1216 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE0B3D61F9471AE002E1216 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		FA1A84131F92CC7400F7333D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FAE0B3D21F946E8B002E1216 /* LoginFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
 		FAE0B3D41F946FC1002E1216 /* temp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = temp.storyboard; sourceTree = "<group>"; };
+		FAE0B3D61F9471AE002E1216 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				FA1A84081F92C07E00F7333D /* Login Controllers */,
 				A3167A901F846BA60051DB3D /* AppDelegate.swift */,
 				A30667391F92C11A00E4AE23 /* MapViewController.swift */,
+				FAE0B3D61F9471AE002E1216 /* SettingsViewController.swift */,
 				A3167A921F846BA60051DB3D /* ViewController.swift */,
 				A3167AA21F846C5F0051DB3D /* UserModel.swift */,
 				A3167A941F846BA60051DB3D /* Main.storyboard */,
@@ -292,6 +295,7 @@
 				A306673A1F92C11A00E4AE23 /* MapViewController.swift in Sources */,
 				FA1A840C1F92C0B700F7333D /* SignUpViewController.swift in Sources */,
 				FA1A84101F92C37100F7333D /* Helper.swift in Sources */,
+				FAE0B3D71F9471AE002E1216 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

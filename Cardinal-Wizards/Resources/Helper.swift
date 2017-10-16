@@ -21,6 +21,13 @@ class Helper {
     //        //        println(json["DDD"].string)
     //    }
     
+    static func cacheUser(user: User) {
+        let diskConfig = DiskConfig(name: "Floppy")
+        
+        let storage = try? Storage(diskConfig: diskConfig)
+        
+        try? storage?.setObject(user, forKey: "currentUser")
+    }
     static func decacheUser() {
         let diskConfig = DiskConfig(name: "Floppy")
         

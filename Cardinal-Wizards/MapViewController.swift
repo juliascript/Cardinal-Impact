@@ -10,18 +10,38 @@ import UIKit
 import MapKit
 import CoreLocation
 
-/*
- TODO: - add annotations to map on setting of the users array
-     - add custom image for each user - depending on wizard or newcomer 
- 
- */
-
 class MapViewController: UIViewController, MKMapViewDelegate {
     
     var locationManager = CLLocationManager()
     var currentUser: User?
     var currentUserLocation: MKUserLocation?
     var fb = FirebaseHelper()
+    var newcomersThatNeedHelp: [User] = []
+    var newcomerRequestedHelp: Bool = false {
+        didSet {
+            if newcomerRequestedHelp == true {
+                if currentUser?.type == "wizard" {
+                    let alert = UIAlertController(title: "A newcomer needs help",
+                                                  message: "Are you available to help them?",
+                                                  preferredStyle: .alert)
+                    
+                    let okButton = UIAlertAction(title: "Yes", style: .default) { (action) in
+                        print("yes button pressed")
+                        // TODO: check to make sure this newcomer is not already being helped
+                        self.updateTheNewcomer()
+                    }
+                    let cancelButton = UIAlertAction(title: "No", style: .destructive) { (action) in
+                        print("no")
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    
+                    alert.addAction(okButton)
+                    alert.addAction(cancelButton)
+                    self.present(alert, animated: true)
+                }
+            }
+        }
+    }
     var users: [User] = [] {
         didSet {
             print("There are \(users.count) users")
@@ -30,6 +50,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             for user in users {
                 let location = CLLocationCoordinate2DMake(user.latitude, user.longitude)
                 let pin = MKPointAnnotation()
+                
+                // Subtitle string is used later to determine what icon to display
                 if user.type == StudentType.wizard.rawValue {
                     pin.subtitle = StudentType.wizard.rawValue
                 } else if user.type == StudentType.newcomer.rawValue {
@@ -39,13 +61,36 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 pin.title = user.name
                 mapView.addAnnotation(pin)
                 if user.type == "student" && user.state == "lost" {
-                    //                    flash their icon
-                    //                    animate large and small
+                    // flash their icon
+                    // animate large and small
                     print(user)
                     print("DA DADA DADADADA DA NOW WE'RE LOST")
-                    
+                    self.newcomersThatNeedHelp.append(user)
+                    self.newcomerRequestedHelp = true
                 }
             }
+        }
+    }
+    
+    func updateTheNewcomer(){
+        if currentUser?.email == newcomersThatNeedHelp[0].email {
+            let alert = UIAlertController(title: "Don't worry",
+                                          message: "Help is on the way!",
+                                          preferredStyle: .alert)
+            
+            let okButton = UIAlertAction(title: "OK", style: .default) { (action) in
+                print("ok button pressed")
+            }
+            let cancelButton = UIAlertAction(title: "Nevermind", style: .destructive) { (action) in
+                print("Cancel")
+                self.dismiss(animated: true, completion: nil)
+                // TODO: are you sure you want to cancel?
+                self.users.remove(at: 0)
+            }
+            
+            alert.addAction(okButton)
+            alert.addAction(cancelButton)
+            self.present(alert, animated: true)
         }
     }
     
@@ -81,8 +126,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBAction func lostButtonTapped(_ sender: Any) {
         print(#function)
         fb.updateUserValue(key: "state", value: "lost")
-        let alert = UIAlertController(title: "Don't worry",
-                          message: "Help is on the way!",
+        let alert = UIAlertController(title: "Request made",
+                          message: "Wizards around you will get a notification to help you!",
                           preferredStyle: .alert)
         
         let okButton = UIAlertAction(title: "OK", style: .default) { (action) in
@@ -91,19 +136,23 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let cancelButton = UIAlertAction(title: "Nevermind", style: .destructive) { (action) in
             print("Cancel")
             self.dismiss(animated: true, completion: nil)
+            // TODO: are you sure you wanna cancel?
+            self.users.remove(at: 0)
         }
         
         alert.addAction(okButton)
         alert.addAction(cancelButton)
         self.present(alert, animated: true)
     }
-        func instantiateSettings() {
-            let storyboard = UIStoryboard(name: "temp", bundle: nil)
     
-            let vc = storyboard.instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
-            vc.currentUser = self.currentUser
-            self.present(vc, animated: true, completion: nil)
-        }
+    func instantiateSettings() {
+        let storyboard = UIStoryboard(name: "temp", bundle: nil)
+
+        let vc = storyboard.instantiateViewController(withIdentifier: "Settings") as! SettingsViewController
+        vc.currentUser = self.currentUser
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         if self.currentUserLocation == userLocation {
             return

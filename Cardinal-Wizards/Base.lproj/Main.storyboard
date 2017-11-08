@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!-- -->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MapViewController" customModule="Cardinal_Wizards" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,25 +55,57 @@
                                     <constraint firstItem="JvU-JX-04s" firstAttribute="top" secondItem="8zK-Hf-4Dv" secondAttribute="top" id="xJJ-rA-nTC"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIm-MD-gjC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZd-uO-xMu">
+                                        <rect key="frame" x="297" y="20" width="55" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="h2D-PG-JXu"/>
+                                        </constraints>
+                                        <state key="normal" title="settings"/>
+                                        <connections>
+                                            <action selector="settingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bV6-50-pBA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="0qq-mS-5ER"/>
+                                    <constraint firstItem="KZd-uO-xMu" firstAttribute="top" secondItem="HIm-MD-gjC" secondAttribute="top" constant="20" id="Yh0-vX-DEo"/>
+                                    <constraint firstAttribute="trailing" secondItem="KZd-uO-xMu" secondAttribute="trailing" constant="23" id="qg7-MP-14y"/>
+                                    <constraint firstAttribute="bottom" secondItem="KZd-uO-xMu" secondAttribute="bottom" constant="20" id="xQI-pn-zwZ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.84522749352331605" green="0.46664321989907642" blue="0.50880976994590077" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="HIm-MD-gjC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1OR-4U-b59"/>
+                            <constraint firstItem="HIm-MD-gjC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7BP-Sl-WXz"/>
                             <constraint firstItem="S5o-Gc-uD2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="9sq-kT-c2n"/>
                             <constraint firstItem="S5o-Gc-uD2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gtg-1e-Sge"/>
                             <constraint firstItem="8zK-Hf-4Dv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jdj-mT-2X1"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8zK-Hf-4Dv" secondAttribute="bottom" constant="-11" id="QbR-nE-A3G"/>
                             <constraint firstItem="S5o-Gc-uD2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Tsg-Fe-H4Y"/>
                             <constraint firstItem="8zK-Hf-4Dv" firstAttribute="top" secondItem="S5o-Gc-uD2" secondAttribute="bottom" id="WqT-fX-gGM"/>
+                            <constraint firstAttribute="trailing" secondItem="HIm-MD-gjC" secondAttribute="trailing" id="cGp-1Y-Ahu"/>
                             <constraint firstItem="8zK-Hf-4Dv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="shy-Mc-OK4"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title=" " id="8kW-En-q1V">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="xrl-f8-5sd">
+                            <connections>
+                                <action selector="settingButtonPressed:" destination="BYZ-38-t0r" id="sM2-KV-HRk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="S5o-Gc-uD2" id="Cvw-Th-fdG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="136.28185907046478"/>
+            <point key="canvasLocation" x="-791.20000000000005" y="149.77511244377811"/>
         </scene>
     </scenes>
     <resources>

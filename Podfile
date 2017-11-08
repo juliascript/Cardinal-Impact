@@ -15,5 +15,7 @@ target 'Cardinal-Wizards' do
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
   pod 'Kingfisher'
+  pod 'Firebase/Core'
+  pod 'Firebase/Storage'
 
 end

@@ -39,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             fb.retrieveUser(uid: user.uid, callback: { (retrievedUser) in
                                 
                                 self.currentUser = retrievedUser
+                                self.loginUser()
+                                return
                             })
                         }
                     }

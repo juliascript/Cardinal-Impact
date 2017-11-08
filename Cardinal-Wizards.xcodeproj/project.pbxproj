@@ -14,6 +14,7 @@
 		A3167A981F846BA60051DB3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3167A971F846BA60051DB3D /* Assets.xcassets */; };
 		A3167A9B1F846BA60051DB3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3167A991F846BA60051DB3D /* LaunchScreen.storyboard */; };
 		A3167AA31F846C5F0051DB3D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3167AA21F846C5F0051DB3D /* UserModel.swift */; };
+		A32B2D9A1FA3654E00FA1B39 /* CRDAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32B2D991FA3654E00FA1B39 /* CRDAnnotation.swift */; };
 		D8C19A485E1D8103300B39CF /* Pods_Cardinal_Wizards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D140E8B9C1BEC0436C54B175 /* Pods_Cardinal_Wizards.framework */; };
 		FA1A840A1F92C09A00F7333D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A84091F92C09A00F7333D /* LoginViewController.swift */; };
 		FA1A840C1F92C0B700F7333D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A840B1F92C0B700F7333D /* SignUpViewController.swift */; };
@@ -22,6 +23,7 @@
 		FA1A84141F92CCE700F7333D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA1A84131F92CC7400F7333D /* GoogleService-Info.plist */; };
 		FAE0B3D31F946E8B002E1216 /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE0B3D21F946E8B002E1216 /* LoginFlow.storyboard */; };
 		FAE0B3D51F946FC1002E1216 /* temp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE0B3D41F946FC1002E1216 /* temp.storyboard */; };
+		FAE0B3D71F9471AE002E1216 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE0B3D61F9471AE002E1216 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,7 @@
 		A3167A9A1F846BA60051DB3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3167A9C1F846BA60051DB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3167AA21F846C5F0051DB3D /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		A32B2D991FA3654E00FA1B39 /* CRDAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRDAnnotation.swift; sourceTree = "<group>"; };
 		D140E8B9C1BEC0436C54B175 /* Pods_Cardinal_Wizards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cardinal_Wizards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1A84091F92C09A00F7333D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA1A840B1F92C0B700F7333D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		FA1A84131F92CC7400F7333D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FAE0B3D21F946E8B002E1216 /* LoginFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
 		FAE0B3D41F946FC1002E1216 /* temp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = temp.storyboard; sourceTree = "<group>"; };
+		FAE0B3D61F9471AE002E1216 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +95,9 @@
 				FA1A84081F92C07E00F7333D /* Login Controllers */,
 				A3167A901F846BA60051DB3D /* AppDelegate.swift */,
 				A30667391F92C11A00E4AE23 /* MapViewController.swift */,
+				FAE0B3D61F9471AE002E1216 /* SettingsViewController.swift */,
 				A3167A921F846BA60051DB3D /* ViewController.swift */,
+				A32B2D991FA3654E00FA1B39 /* CRDAnnotation.swift */,
 				A3167AA21F846C5F0051DB3D /* UserModel.swift */,
 				A3167A941F846BA60051DB3D /* Main.storyboard */,
 				A3167A971F846BA60051DB3D /* Assets.xcassets */,
@@ -288,10 +294,12 @@
 				FA1A840A1F92C09A00F7333D /* LoginViewController.swift in Sources */,
 				A3167A931F846BA60051DB3D /* ViewController.swift in Sources */,
 				A3167AA31F846C5F0051DB3D /* UserModel.swift in Sources */,
+				A32B2D9A1FA3654E00FA1B39 /* CRDAnnotation.swift in Sources */,
 				A3167A911F846BA60051DB3D /* AppDelegate.swift in Sources */,
 				A306673A1F92C11A00E4AE23 /* MapViewController.swift in Sources */,
 				FA1A840C1F92C0B700F7333D /* SignUpViewController.swift in Sources */,
 				FA1A84101F92C37100F7333D /* Helper.swift in Sources */,
+				FAE0B3D71F9471AE002E1216 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
-    var newUser = User(name: "", uid: "",email: "", type: "student", state: "not lost", latitude: 0.0, longitude: 0.0)
+    var newUser = User(name: "", uid: "",email: "", type: "student", state: "not lost", latitude: 0.0, longitude: 0.0, profile: UIImagePNGRepresentation(#imageLiteral(resourceName: "profile_placeholder"))!)
     
     @IBAction func exitToSignUp(segue: UIStoryboardSegue) {}
     
@@ -95,7 +95,7 @@ class SignUpViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "Home") as! MapViewController
-        cacheUser()
+        Helper.cacheUser(user: newUser)
         vc.currentUser = self.newUser
         self.present(vc, animated: true, completion: nil)
     }
@@ -104,7 +104,7 @@ class SignUpViewController: UIViewController {
         if segue.identifier == "postsSegue" {
             let vc = segue.destination as! ViewController
             
-            cacheUser()
+            Helper.cacheUser(user: newUser)
             
             vc.currentUser = newUser
             
@@ -150,7 +150,8 @@ class SignUpViewController: UIViewController {
                                                                         "email": self.newUser.email,
                                                                         "longitude": "\(self.newUser.longitude)",
                                                                         "latitude": "\(self.newUser.latitude)",
-                                                                       "state": self.newUser.state])
+                                                                       "state": self.newUser.state,
+                                                                       "profile": "0"])
                     
                     self.instantiateHomeScreen()
                 } else {
@@ -182,13 +183,7 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    func cacheUser() {
-        let diskConfig = DiskConfig(name: "Floppy")
-        
-        let storage = try? Storage(diskConfig: diskConfig)
-        
-        try? storage?.setObject(newUser, forKey: "currentUser")
-    }
+    
     
     func showAlert() {
         //Tells the user that there is an error and then gets firebase to tell them the error

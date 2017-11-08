@@ -171,15 +171,15 @@ class SignUpViewController: UIViewController {
         
         for i in 0..<users.count {
             let index = i + 1
+            let userType = users[i]
             if index == chosenIndex {
-                let userType = users[i]
-                newUser.type = userType.rawValue
                 chosenButton.roundAndShadow(radius: 10, opacity: 0.0, borderWidth: 2, borderColor: Helper.colorWithHexString(hex: "#FC2707").cgColor)
             } else {
                 print(i)
                 let tmpButton = self.view.viewWithTag(index) as? UIButton
                 tmpButton?.layer.borderWidth = 0
             }
+            newUser.type = userType.rawValue
         }
     }
     

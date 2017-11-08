@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 import MapKit
 
-class CRDAnnotation: NSObject, MKAnnotation {
+
+class CRDAnnotation: MKPointAnnotation {
     public var currentLocation: CLLocationCoordinate2D
     private var _title: String?
     private var subTitle: String?
@@ -29,7 +30,7 @@ class CRDAnnotation: NSObject, MKAnnotation {
         return CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
     }
     
-    public var coordinate: CLLocationCoordinate2D {
+    override public var coordinate: CLLocationCoordinate2D {
         get {
             return self.currentLocation
         }
@@ -38,7 +39,7 @@ class CRDAnnotation: NSObject, MKAnnotation {
         }
     }
     
-    public var title: String? {
+    override public var title: String? {
         get {
             return _title
         }
@@ -47,7 +48,7 @@ class CRDAnnotation: NSObject, MKAnnotation {
         }
     }
     
-    public var subtitle: String? {
+    override public var subtitle: String? {
         get {
             return subTitle
         }

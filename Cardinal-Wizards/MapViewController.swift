@@ -41,7 +41,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                             }
                             if crdAnnotation.user?.email == newcomerThatIsBeingHelped.email {
                                 print("this is the user that needs to change color")
-                                
+
+                                self.mapView.selectAnnotation(annotation, animated: true)
                             }
                         }
                         
@@ -70,6 +71,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 pin.user = user
                 pin.subtitle = user.type
                 pin.title = user.name
+                
                 mapView.addAnnotation(pin)
                 if user.type == "student" && user.state == "lost" {
                     self.newcomersThatNeedHelp.append(user)
@@ -181,12 +183,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        guard let annotation = annotation as? CRDAnnotation else {
-            print("hello")
-            return nil
-        }
-        
-        if annotation.user?.email == self.currentUser?.email {
+        if !(annotation is CRDAnnotation) {
             return nil
         }
         
@@ -195,6 +192,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "CustomAnnotation")
         } else {
             annotationView?.annotation = annotation
+        }
+        
+        guard let annotation = annotation as? CRDAnnotation else {
+            print("hello")
+            return nil
+        }
+        
+        if annotation.user?.email == self.currentUser?.email {
+            return nil
         }
         
         if let type = annotation.user?.type {

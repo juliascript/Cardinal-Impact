@@ -17,7 +17,7 @@ class SignUpViewController: UIViewController {
     var ref: DatabaseReference?
     
     var fields = ["Full Name", "Email", "Password"]
-    let users : [StudentType] = [.newcomer, .wizard]
+    let users : [StudentType] = [.wizard, .newcomer]
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
@@ -167,20 +167,20 @@ class SignUpViewController: UIViewController {
     func chooseUserType(_ sender: AnyObject) {
         let chosenButton = sender as! UIButton
         let chosenIndex = chosenButton.tag
-        
+        var userType: StudentType =  .wizard
         
         for i in 0..<users.count {
             let index = i + 1
-            let userType = users[i]
             if index == chosenIndex {
+                userType = users[i]
                 chosenButton.roundAndShadow(radius: 10, opacity: 0.0, borderWidth: 2, borderColor: Helper.colorWithHexString(hex: "#FC2707").cgColor)
             } else {
                 print(i)
                 let tmpButton = self.view.viewWithTag(index) as? UIButton
                 tmpButton?.layer.borderWidth = 0
             }
-            newUser.type = userType.rawValue
         }
+        newUser.type = userType.rawValue
     }
     
     

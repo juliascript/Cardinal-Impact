@@ -180,12 +180,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add your interests" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kDd-Vv-hwM">
-                                <rect key="frame" x="16" y="379" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY INTERESTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9V-1U-3Ry">
                                 <rect key="frame" x="16" y="350" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
@@ -198,31 +192,61 @@
                                     <constraint firstAttribute="width" constant="61" id="8lK-b7-NHc"/>
                                     <constraint firstAttribute="height" constant="40" id="pwF-Uf-RTg"/>
                                 </constraints>
-                                <state key="normal" title="logout"/>
+                                <state key="normal" title="logout">
+                                    <color key="titleColor" red="0.54901960780000003" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logoutButtonPressed:" destination="my8-3E-O1d" eventType="touchUpInside" id="mFE-f4-U49"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4X-rj-lEc">
+                                <rect key="frame" x="16" y="504" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.5490196078431373" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="4hV-e4-zQs"/>
+                                    <constraint firstAttribute="height" constant="40" id="iDa-BR-FbE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveSettingsButtonPressed:" destination="my8-3E-O1d" eventType="touchUpInside" id="UkJ-Rf-QZD"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Entrepreneurship, Social Good, Biotechnology, Functional Programming, Art Curation, Hockey" translatesAutoresizingMaskIntoConstraints="NO" id="7ne-by-dAz">
+                                <rect key="frame" x="16" y="378" width="343" height="104"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="8aI-ds-EWs"/>
+                                    <constraint firstAttribute="width" constant="343" id="iUk-gJ-iqP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99998795986175537" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="C9V-1U-3Ry" firstAttribute="height" secondItem="RhQ-BN-7TB" secondAttribute="height" id="27b-uE-0O0"/>
                             <constraint firstItem="1CM-nN-qpX" firstAttribute="top" secondItem="oHg-RA-BnR" secondAttribute="bottom" constant="34" id="29K-ae-6kn"/>
-                            <constraint firstItem="kDd-Vv-hwM" firstAttribute="top" secondItem="C9V-1U-3Ry" secondAttribute="bottom" constant="8" id="2NF-Sk-eB0"/>
+                            <constraint firstItem="o4X-rj-lEc" firstAttribute="top" secondItem="7ne-by-dAz" secondAttribute="bottom" constant="22" id="6bf-zv-2h9"/>
                             <constraint firstItem="oHg-RA-BnR" firstAttribute="centerX" secondItem="jWW-xw-r63" secondAttribute="centerX" id="9sH-ce-BV5"/>
+                            <constraint firstItem="7ne-by-dAz" firstAttribute="top" secondItem="C9V-1U-3Ry" secondAttribute="bottom" constant="7" id="DYN-gQ-JrL"/>
                             <constraint firstItem="jWW-xw-r63" firstAttribute="trailing" secondItem="RhQ-BN-7TB" secondAttribute="trailing" constant="16" id="Ech-hs-5fA"/>
                             <constraint firstItem="C9V-1U-3Ry" firstAttribute="trailing" secondItem="O7w-hC-wdu" secondAttribute="trailing" id="IFo-KG-6DW"/>
-                            <constraint firstItem="kDd-Vv-hwM" firstAttribute="leading" secondItem="C9V-1U-3Ry" secondAttribute="leading" id="PI5-iD-YeB"/>
+                            <constraint firstItem="7ne-by-dAz" firstAttribute="leading" secondItem="jWW-xw-r63" secondAttribute="leading" constant="16" id="Ic1-NL-ZA7"/>
                             <constraint firstItem="C9V-1U-3Ry" firstAttribute="leading" secondItem="O7w-hC-wdu" secondAttribute="leading" id="RWe-6D-aOI"/>
                             <constraint firstItem="1CM-nN-qpX" firstAttribute="leading" secondItem="jWW-xw-r63" secondAttribute="leading" id="U59-Ih-FoO"/>
                             <constraint firstItem="O7w-hC-wdu" firstAttribute="leading" secondItem="RhQ-BN-7TB" secondAttribute="leading" id="XHb-nB-viW"/>
                             <constraint firstItem="oHg-RA-BnR" firstAttribute="top" secondItem="jWW-xw-r63" secondAttribute="top" constant="22" id="Xsl-u7-FAT"/>
+                            <constraint firstItem="jWW-xw-r63" firstAttribute="trailing" secondItem="o4X-rj-lEc" secondAttribute="trailing" constant="16" id="YCD-YY-2WM"/>
                             <constraint firstItem="O7w-hC-wdu" firstAttribute="trailing" secondItem="RhQ-BN-7TB" secondAttribute="trailing" id="bYz-D5-hZc"/>
                             <constraint firstItem="RhQ-BN-7TB" firstAttribute="top" secondItem="1CM-nN-qpX" secondAttribute="bottom" constant="20" id="coq-IA-F0Y"/>
+                            <constraint firstItem="jWW-xw-r63" firstAttribute="trailing" secondItem="7ne-by-dAz" secondAttribute="trailing" constant="16" id="hgg-sd-DrH"/>
                             <constraint firstItem="1CM-nN-qpX" firstAttribute="trailing" secondItem="jWW-xw-r63" secondAttribute="trailing" id="hnF-ha-Kgp"/>
                             <constraint firstItem="O7w-hC-wdu" firstAttribute="top" secondItem="RhQ-BN-7TB" secondAttribute="bottom" constant="8" id="htb-cb-k7W"/>
                             <constraint firstItem="C9V-1U-3Ry" firstAttribute="top" secondItem="O7w-hC-wdu" secondAttribute="bottom" constant="21" id="lja-hX-W42"/>
-                            <constraint firstItem="kDd-Vv-hwM" firstAttribute="trailing" secondItem="C9V-1U-3Ry" secondAttribute="trailing" id="mG4-HS-pLp"/>
+                            <constraint firstItem="o4X-rj-lEc" firstAttribute="leading" secondItem="jWW-xw-r63" secondAttribute="leading" constant="16" id="mTT-j4-fnV"/>
                             <constraint firstItem="RhQ-BN-7TB" firstAttribute="leading" secondItem="jWW-xw-r63" secondAttribute="leading" constant="16" id="oKG-iu-Px3"/>
                             <constraint firstItem="jWW-xw-r63" firstAttribute="trailing" secondItem="3RK-qt-YHi" secondAttribute="trailing" constant="16" id="oci-7s-tpM"/>
                             <constraint firstItem="3RK-qt-YHi" firstAttribute="top" secondItem="jWW-xw-r63" secondAttribute="top" constant="10" id="x8o-qJ-h9u"/>
@@ -230,7 +254,8 @@
                         <viewLayoutGuide key="safeArea" id="jWW-xw-r63"/>
                     </view>
                     <connections>
-                        <outlet property="interestsTextField" destination="kDd-Vv-hwM" id="MvG-YL-Ta0"/>
+                        <outlet property="SaveSettingsButton" destination="o4X-rj-lEc" id="3zE-sz-Ofz"/>
+                        <outlet property="interestTextView" destination="7ne-by-dAz" id="U64-n6-uZg"/>
                         <outlet property="logoutButton" destination="3RK-qt-YHi" id="Qhf-9W-jGx"/>
                         <outlet property="majorTextField" destination="O7w-hC-wdu" id="D5T-Df-JGd"/>
                         <outlet property="nameLabel" destination="1CM-nN-qpX" id="N1A-mD-bNA"/>
@@ -239,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fr-Jj-e1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="152"/>
+            <point key="canvasLocation" x="736.79999999999995" y="151.57421289355324"/>
         </scene>
     </scenes>
     <resources>

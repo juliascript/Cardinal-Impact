@@ -23,8 +23,8 @@ struct User: Codable {
     var longitude: Double
     var profile: Data
     
-//    let image: Data?
-//    let major: String?
-//    let year: Int?
-//    let interests: [String]?
+    let image: Data?
+    let major: String?
+    let year: Int?
+    let interests: [String]?
 }

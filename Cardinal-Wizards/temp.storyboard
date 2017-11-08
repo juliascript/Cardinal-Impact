@@ -186,6 +186,16 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please separate your interests with a comma &amp; a space. i.e. Hockey, Art," textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70k-kh-uGf">
+                                <rect key="frame" x="16" y="366" width="343" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="C4Y-8w-39j"/>
+                                    <constraint firstAttribute="width" constant="343" id="XMe-O8-o1p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="9"/>
+                                <color key="textColor" white="0.608154296875" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3RK-qt-YHi">
                                 <rect key="frame" x="298" y="30" width="61" height="40"/>
                                 <constraints>
@@ -200,7 +210,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4X-rj-lEc">
-                                <rect key="frame" x="16" y="504" width="343" height="40"/>
+                                <rect key="frame" x="16" y="529" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.5490196078431373" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="4hV-e4-zQs"/>
@@ -215,12 +225,13 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Entrepreneurship, Social Good, Biotechnology, Functional Programming, Art Curation, Hockey" translatesAutoresizingMaskIntoConstraints="NO" id="7ne-by-dAz">
-                                <rect key="frame" x="16" y="378" width="343" height="104"/>
+                                <rect key="frame" x="16" y="389" width="343" height="104"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="104" id="8aI-ds-EWs"/>
                                     <constraint firstAttribute="width" constant="343" id="iUk-gJ-iqP"/>
                                 </constraints>
+                                <color key="textColor" red="0.40779560804367065" green="0.40787053108215332" blue="0.40779092907905579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -229,9 +240,11 @@
                         <constraints>
                             <constraint firstItem="C9V-1U-3Ry" firstAttribute="height" secondItem="RhQ-BN-7TB" secondAttribute="height" id="27b-uE-0O0"/>
                             <constraint firstItem="1CM-nN-qpX" firstAttribute="top" secondItem="oHg-RA-BnR" secondAttribute="bottom" constant="34" id="29K-ae-6kn"/>
-                            <constraint firstItem="o4X-rj-lEc" firstAttribute="top" secondItem="7ne-by-dAz" secondAttribute="bottom" constant="22" id="6bf-zv-2h9"/>
+                            <constraint firstItem="jWW-xw-r63" firstAttribute="trailing" secondItem="70k-kh-uGf" secondAttribute="trailing" constant="16" id="2db-uj-yZd"/>
+                            <constraint firstItem="o4X-rj-lEc" firstAttribute="top" secondItem="7ne-by-dAz" secondAttribute="bottom" constant="36" id="6bf-zv-2h9"/>
                             <constraint firstItem="oHg-RA-BnR" firstAttribute="centerX" secondItem="jWW-xw-r63" secondAttribute="centerX" id="9sH-ce-BV5"/>
-                            <constraint firstItem="7ne-by-dAz" firstAttribute="top" secondItem="C9V-1U-3Ry" secondAttribute="bottom" constant="7" id="DYN-gQ-JrL"/>
+                            <constraint firstItem="70k-kh-uGf" firstAttribute="top" secondItem="O7w-hC-wdu" secondAttribute="bottom" constant="37" id="DT2-gs-Alj"/>
+                            <constraint firstItem="7ne-by-dAz" firstAttribute="top" secondItem="C9V-1U-3Ry" secondAttribute="bottom" constant="18" id="DYN-gQ-JrL"/>
                             <constraint firstItem="jWW-xw-r63" firstAttribute="trailing" secondItem="RhQ-BN-7TB" secondAttribute="trailing" constant="16" id="Ech-hs-5fA"/>
                             <constraint firstItem="C9V-1U-3Ry" firstAttribute="trailing" secondItem="O7w-hC-wdu" secondAttribute="trailing" id="IFo-KG-6DW"/>
                             <constraint firstItem="7ne-by-dAz" firstAttribute="leading" secondItem="jWW-xw-r63" secondAttribute="leading" constant="16" id="Ic1-NL-ZA7"/>
@@ -246,6 +259,7 @@
                             <constraint firstItem="1CM-nN-qpX" firstAttribute="trailing" secondItem="jWW-xw-r63" secondAttribute="trailing" id="hnF-ha-Kgp"/>
                             <constraint firstItem="O7w-hC-wdu" firstAttribute="top" secondItem="RhQ-BN-7TB" secondAttribute="bottom" constant="8" id="htb-cb-k7W"/>
                             <constraint firstItem="C9V-1U-3Ry" firstAttribute="top" secondItem="O7w-hC-wdu" secondAttribute="bottom" constant="21" id="lja-hX-W42"/>
+                            <constraint firstItem="70k-kh-uGf" firstAttribute="leading" secondItem="jWW-xw-r63" secondAttribute="leading" constant="16" id="mRe-yv-YcI"/>
                             <constraint firstItem="o4X-rj-lEc" firstAttribute="leading" secondItem="jWW-xw-r63" secondAttribute="leading" constant="16" id="mTT-j4-fnV"/>
                             <constraint firstItem="RhQ-BN-7TB" firstAttribute="leading" secondItem="jWW-xw-r63" secondAttribute="leading" constant="16" id="oKG-iu-Px3"/>
                             <constraint firstItem="jWW-xw-r63" firstAttribute="trailing" secondItem="3RK-qt-YHi" secondAttribute="trailing" constant="16" id="oci-7s-tpM"/>

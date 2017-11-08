@@ -33,7 +33,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                         // TODO: display the user that needs help in a special color and flash their icon
 //                        reload the map view and only change the color of the first one that needs help?
                         self.mapView.reloadInputViews()
-//                        let newcomer = self.newcomersThatNeedHelp[0]
+                        let newcomerThatIsBeingHelped = self.newcomersThatNeedHelp[0]
+                        for annotation in self.mapView.annotations {
+                            guard let crdAnnotation = annotation as? CRDAnnotation else {
+                                print("conversion didnt work")
+                                return
+                            }
+                            if crdAnnotation.user?.email == newcomerThatIsBeingHelped.email {
+                                print("this is the user that needs to change color")
+                                
+                            }
+                        }
                         
                         // TODO: add button that they can press when the problem is resolved
                     }

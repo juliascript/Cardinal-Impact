@@ -29,6 +29,23 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                         print("yes button pressed")
                         // TODO: check to make sure this newcomer is not already being helped
                         self.updateTheNewcomer()
+                        
+                        // TODO: display the user that needs help in a special color and flash their icon
+//                        reload the map view and only change the color of the first one that needs help?
+                        self.mapView.reloadInputViews()
+                        let newcomerThatIsBeingHelped = self.newcomersThatNeedHelp[0]
+                        for annotation in self.mapView.annotations {
+                            guard let crdAnnotation = annotation as? CRDAnnotation else {
+                                print("conversion didnt work")
+                                return
+                            }
+                            if crdAnnotation.user?.email == newcomerThatIsBeingHelped.email {
+                                print("this is the user that needs to change color")
+                                
+                            }
+                        }
+                        
+                        // TODO: add button that they can press when the problem is resolved
                     }
                     let cancelButton = UIAlertAction(title: "No", style: .destructive) { (action) in
                         print("no")
@@ -49,22 +66,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             
             for user in users {
                 let location = CLLocationCoordinate2DMake(user.latitude, user.longitude)
-                let pin = MKPointAnnotation()
-                
-                // Subtitle string is used later to determine what icon to display
-                if user.type == StudentType.wizard.rawValue {
-                    pin.subtitle = StudentType.wizard.rawValue
-                } else if user.type == StudentType.newcomer.rawValue {
-                    pin.subtitle = StudentType.newcomer.rawValue
-                }
-                pin.coordinate = location
+                let pin = CRDAnnotation(coordinate: location)
+                pin.user = user
+                pin.subtitle = user.type
                 pin.title = user.name
                 mapView.addAnnotation(pin)
                 if user.type == "student" && user.state == "lost" {
-                    // flash their icon
-                    // animate large and small
-                    print(user)
-                    print("DA DADA DADADADA DA NOW WE'RE LOST")
                     self.newcomersThatNeedHelp.append(user)
                     self.newcomerRequestedHelp = true
                 }
@@ -173,7 +180,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation is MKUserLocation {
+        
+        guard let annotation = annotation as? CRDAnnotation else {
+            print("hello")
+            return nil
+        }
+        
+        if annotation.user?.email == self.currentUser?.email {
             return nil
         }
         
@@ -184,18 +197,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             annotationView?.annotation = annotation
         }
         
-        if let type = annotation.subtitle {
-            // have to check again because the type of annotation.subtitle is String??
-            if let type = type {
-                annotationView?.image = UIImage(named: type)
-            } else {
-                annotationView?.image = UIImage(named: "default")
-            }
+        if let type = annotation.user?.type {
+            annotationView?.image = UIImage(named: type)
         } else {
             annotationView?.image = UIImage(named: "default")
         }
-        
-        
         
         annotationView?.canShowCallout = true
         return annotationView
